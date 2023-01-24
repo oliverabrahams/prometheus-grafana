@@ -1,0 +1,21 @@
+global:
+    # How frequently to scrape targets by default.
+    scrape_interval: 30s
+
+    # How long until a scrape request times out.
+    scrape_timeout: 5s
+
+    # How frequently to evaluate rules.
+    evaluation_interval: 1m
+
+    # The labels to add to any time series or alerts when communicating with
+    # external systems (federation, remote storage, Alertmanager).
+    external_labels:
+      timegate: 'timegate_monitor'
+
+# A list of scrape configurations.
+scrape_configs:
+  # The job name assigned to scraped metrics by default.
+  - job_name: job-name
+    static_configs:
+      - targets: ['host.docker.internal:4100']
