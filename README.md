@@ -6,6 +6,7 @@ First clone the repo.
 
 Change the target of prometheus to your metrics endpoint. in ./prometheus/prometheus.yml
 ```yaml
+scrape_configs:
   - job_name: *job-name
     static_configs:
       - targets: [*'host.docker.internal:4100']
